@@ -43,7 +43,7 @@ public class PrimaryJpaConfig {
     @Bean(name = "primaryJpaProperties")
     @ConfigurationProperties(prefix = "spring.jpa")
     public JpaProperties jpaProperties() {
-        return new JpaProperties();
+        return new JpaProperties(){{setShowSql(true);}};
     }
 
     /**

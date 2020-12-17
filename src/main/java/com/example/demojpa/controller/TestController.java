@@ -4,6 +4,7 @@ import com.example.demojpa.entity.Role;
 import com.example.demojpa.entity.User;
 import com.example.demojpa.repository.RoleRepository;
 import com.example.demojpa.repository.UserRepository;
+import com.example.demojpa.service.TestService;
 import com.example.demojpa.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class TestController {
 
     UserService userService;
 
+    TestService testService;
+
     @RequestMapping("/test")
     public User test(){
         User user = new User();
@@ -32,4 +35,5 @@ public class TestController {
         user.getRoles().add(role);
         return userService.save(user);
     }
+
 }
