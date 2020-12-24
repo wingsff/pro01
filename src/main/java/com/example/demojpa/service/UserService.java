@@ -1,10 +1,13 @@
 package com.example.demojpa.service;
 
 import com.example.demojpa.entity.User;
+import com.example.demojpa.entity.UserDto;
 import com.example.demojpa.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @author Administrator
@@ -21,6 +24,5 @@ public class UserService {
     public User save(User user){
         return userRepository.save(user);
     }
-
 
 }

@@ -1,11 +1,10 @@
 package com.example.demojpa;
 
-import com.example.demojpa.entity.Role;
-import com.example.demojpa.entity.SysMember;
-import com.example.demojpa.entity.User;
+import com.example.demojpa.entity.*;
 import com.example.demojpa.repository.RoleRepository;
 import com.example.demojpa.repository.UserRepository;
 import com.example.demojpa.service.SysMemberService;
+import com.example.demojpa.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.*;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 class DemoJpaApplicationTests {
@@ -26,16 +26,24 @@ class DemoJpaApplicationTests {
     RoleRepository roleRepository;
     @Autowired
     SysMemberService sysMemberService;
+    @Autowired
+    UserService userService;
+
 
     @Test
     void contextLoads() {
     }
 
     @Test
+    void testSelect(){
+        List<Map> sysMembers = sysMemberService.selelctAll();
+        System.out.println("----");
+    };
+
+    @Test
     void testGroupBy(){
         Page<Long> sysMembers = sysMemberService.find();
         System.out.println();
-
     };
 
 

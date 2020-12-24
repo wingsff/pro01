@@ -27,6 +27,12 @@ public class User {
     @Column(name = "age")
     private Integer age;
 
+    @Transient
+    private Long aa;
+    @Transient
+    private String bb;
+    @Transient
+    private Integer cc;
 
     /**
      * 要是放弃维护权就将@JoinTable删除，并且换成@ManyToMany(mappedBy = "roles")属性，取对方关联的属性，级联用cascade

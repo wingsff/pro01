@@ -1,5 +1,6 @@
 package com.example.demojpa.service;
 
+import com.example.demojpa.entity.RoleDto;
 import com.example.demojpa.entity.SysMember;
 import com.example.demojpa.repository.SysMemberRepository;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,8 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.*;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -35,4 +38,9 @@ public class SysMemberService {
         return sysMemberRepository.findDistinctMemberIdByRoleId(3L, pageable);
     }
 
+
+    public List<Map> selelctAll(){
+        Pageable pageable = PageRequest.of(1, 5);
+        return sysMemberRepository.selelctAll(pageable);
+    };
 }
