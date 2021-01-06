@@ -1,6 +1,7 @@
 package com.example.demojpa;
 
 import com.example.demojpa.entity.*;
+import com.example.demojpa.repository.ManageRepository;
 import com.example.demojpa.repository.RoleRepository;
 import com.example.demojpa.repository.UserRepository;
 import com.example.demojpa.service.SysMemberService;
@@ -25,6 +26,8 @@ class DemoJpaApplicationTests {
     @Autowired
     RoleRepository roleRepository;
     @Autowired
+    ManageRepository manageRepository;
+    @Autowired
     SysMemberService sysMemberService;
     @Autowired
     UserService userService;
@@ -33,6 +36,12 @@ class DemoJpaApplicationTests {
     @Test
     void contextLoads() {
     }
+
+    @Test
+    void testOneToMany(){
+        List<Manage> all = manageRepository.findAll();
+        System.out.println(all);
+    };
 
     @Test
     void testSelect(){
