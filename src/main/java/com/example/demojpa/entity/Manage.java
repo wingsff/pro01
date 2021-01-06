@@ -15,7 +15,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "t_manage")
-@Data
 public class Manage {
 
     @Id
@@ -38,11 +37,43 @@ public class Manage {
 //                ", age=" + age +
 //                ", applicants=" + applicants +
 //                '}';
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public List<Applicant> getApplicants() {
+        return applicants;
+    }
+
+    public void setApplicants(List<Applicant> applicants) {
+        this.applicants = applicants;
+    }
 //    }
 
 //    @OneToMany(targetEntity = Applicant.class, fetch = FetchType.EAGER)
 //    @JoinColumn(name = "userId", referencedColumnName = "id")
 //    @JsonIgnoreProperties(value = "manage")
     @OneToMany(mappedBy = "manage", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    private Set<Applicant> applicants = new HashSet<>();
+    private List<Applicant> applicants;
 }

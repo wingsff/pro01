@@ -12,7 +12,6 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "t_applicant")
-@Data
 public class Applicant {
 
     @Id
@@ -43,4 +42,36 @@ public class Applicant {
 //                ", manage=" + manage +
 //                '}';
 //    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getApplicant() {
+        return applicant;
+    }
+
+    public void setApplicant(String applicant) {
+        this.applicant = applicant;
+    }
+
+    public Manage getManage() {
+        return manage;
+    }
+
+    public void setManage(Manage manage) {
+        this.manage = manage;
+    }
 }
